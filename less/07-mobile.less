@@ -1,0 +1,609 @@
+
+// Display none.
+.mobile_hide  { display : none;  } // Masqué sur mobile mais apparent sur desktop.
+.desktop_hide { display : block; } // Apparent sur desktop mais masqué sur mobile.
+
+
+// CONTENEUR PRINCIPAL.
+.wrapper {
+position   : relative;
+float      : left;
+width      : 100%;
+text-align : justify;
+overflow   : hidden;
+
+    &:nth-child(1) { height : 26rem; } // 50% du viewport pour "logo".
+    &:nth-child(2) { height : 72rem; } // 50% du viewport pour "integrateur".
+    &:nth-child(3) { height : 100rem; } // 50% du viewport pour "webdesigner".
+    &:nth-child(4) { height : 40rem; } // 50% du viewport pour "CV".
+    // &:nth-child(5) { height : 38rem; } // 50% du viewport pour "photo".
+    &:nth-child(6) { height : 68rem; } // 50% du viewport pour "contact".
+    &:nth-child(7) { height : 70rem; } // 50% du viewport pour "BàS".
+}
+
+
+
+// Gestion des titres.
+.title {
+    margin         : 0;
+    // text-shadow : .1rem .1rem .1rem rgba(0, 0, 0, 0.1);
+    text-align     : center;
+    font-weight    : 100;
+    text-transform : uppercase;
+    margin-bottom  : 3rem;
+    .font_size(3);
+}
+
+
+/* ========================================================================== */
+/*                               =HEADER                                      */
+/* ========================================================================== */
+
+
+.nav {
+    display : block;
+    width   : 90%;
+}
+
+.logo,
+.menu {
+padding : 0;
+margin  : 0;
+
+    a {
+    display         : block;
+    text-transform  : uppercase;
+    height          : 8rem;
+    line-height     : 8rem;
+    text-align      : center;
+    }
+}
+
+.logo a {
+color       : @gris50;
+font-weight : 100;
+text-shadow : .1rem .1rem .1rem rgba(0, 0, 0, 0.1);
+.transition(all .7s ease-out);
+.font_size(2.7);
+
+    &:hover {
+    color       : @bleu;
+    text-shadow : none;
+    .transition;
+    }
+}
+
+.menu li {
+float      : left;
+width      : 50%;
+border     : .1rem solid @blanc;
+background : @gris95;
+.transition(all .5s ease-out);
+
+    // Gestion de la "bulle" de contact.
+    &:last-child {
+    width           : 100%;
+    margin-bottom   : 2rem;
+
+        :after {
+        content         : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48Zz48L2c+PHBhdGggZD0iTTEwLjAwOSAxMS43ODhsLTIuNTQ1LTIuMDg5LTUuNTM5IDYuNTM5aDE2LjE3MmwtNS41MzktNi42MDQtMi41NDkgMi4xNTR6TTE4LjcwNCAzLjc2MmgtMTcuMzg0bDguNjkzIDcuMyA4LjY5Mi03LjMxMXpNMTIuOTQxIDkuMzA0bDUuODA3IDYuOTI3di0xMS44NDVsLTUuODA3IDQuOTE3ek0xLjI1MiA0LjM4N3YxMS44NDVsNS44MDctNi45MjgtNS44MDctNC45MTd6IiBmaWxsPSIjZmZmZmZmIi8+PC9zdmc+);
+        position        : absolute;
+        height          : 5rem;
+        width           : 5rem;
+        padding-top     : 1.5rem;
+        margin          : 1.5rem 0 0 -3.5rem;
+        text-align      : center;
+        line-height     : 2rem;
+        border-radius   : 50%;
+        background      : @bleu;
+        }
+
+        // Gestion du survol de la liste.
+        &:hover {
+        .transition(all 0.7s ease-out);
+
+            &:last-child {
+            background : darken(@blanc, 3%);
+
+                :after {
+                content     : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48Zz48L2c+PHBhdGggZD0iTTEyLjU4NyAxMS44MzRsNi4xMTctNC45OTktOC43MDQtNi4xNDYtOC42ODEgNi4xIDYuMSA1IDUuMTI4LTAuMDIxek03LjcyNSAxMi40NmwtNS43OTkgNi44NTFoMTYuMTcybC01Ljg1Mi02LjgxMy00LjUyMS0wLjAzOXpNMTIuOTQxIDEyLjM3N2w1LjgwNyA2LjkyOHYtMTEuODQ1bC01LjgwNyA0LjkxN3pNMS4yNTIgNy40NTl2MTEuODQ1bDUuODA3LTYuOTI4LTUuODA3LTQuOTE3eiIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==);
+                padding-top : 1.4rem;
+                background  : @mango;
+                }
+            }
+        }
+    }
+
+    a {
+    padding : 0 1.7rem;
+    color   : @gris50;
+    .transition(all .5s ease-out);
+    .font_size(1.3);
+
+        &:hover {
+        // color  : @bleu;
+        transform : scale(1.2);
+        .transition;
+        }
+    }
+}
+
+
+
+/* ======================================================== */
+/*                     =CONTENU                             */
+/* ======================================================== */
+
+
+.header_box,
+.integrateur_box,
+.webdesigner_box,
+.cv_box,
+.photo_box,
+.contact_box,
+.footer_box { width : 90%;
+
+    p {
+    margin : 1.5rem auto 3rem auto;
+    .font_size(1.5);
+    }
+}
+
+/* ======================================================== */
+/*                      =INTEGRATEUR                        */
+/* ======================================================== */
+
+.mod_integrateur {
+    width   : 100%;
+    padding : 0;
+    margin  : 0 auto;
+    display : block;
+}
+
+.integrateur {
+float          : left;
+position       : relative;
+display        : block;
+margin-bottom  : 1rem;
+width          : 100%;
+height         : 10rem;
+line-height    : 7.5rem;
+font-size      : 3rem;
+font-weight    : 100;
+text-transform : uppercase;
+text-align     : center;
+color          : @bleu;
+box-shadow     : inset 0 0 0 .1rem @gris70;
+
+    ul {
+    position   : absolute;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    margin-top : 2.5rem;
+    font-size  : 2rem;
+    color      : @gris70;
+    padding    : 0;
+
+        li { text-transform : none; }
+    }
+}
+
+
+
+/* ======================================================== */
+/*                       =WEBDESIGNER                       */
+/* ======================================================== */
+
+.webdesign {
+float         : left;
+position      : relative;
+margin        : 0;
+overflow      : hidden;
+width         : 100%;
+height        : 11rem;
+border-bottom : .5rem solid @blanc;
+background    : @gris95;
+
+    &:hover img {
+    .transition(all .5s ease-out);
+    .opacity(1);
+    }
+
+    figure {
+    height : 100%;
+    margin : 0;
+    }
+
+    img {
+    display   : block;
+    width     : 100%;
+    max-width : 100%;
+    height    : auto;
+    margin    : -5.5rem auto 0 auto;
+    .opacity(.5);
+    .transition(all .7s ease-in);
+    }
+
+    figcaption {
+    display : none;
+    color   : @gris50;
+    }
+}
+
+
+
+/* ======================================================== */
+/*                      =PHOTOGRAPHIE                       */
+/* ======================================================== */
+
+.slideshow,
+.slideshow:after {
+    position : absolute;
+    width    : 100%;
+    height   : 100%;
+    top      : 0;
+    left     : 0;
+    right    : 0;
+    bottom   : 0;
+    margin   : 0;
+}
+
+.slideshow {
+
+    &:after {
+    content    : '';
+    // background : transparent url(../img/photo/pattern.png) repeat top left;
+    background : rgba(255, 255, 255, 0.9);
+    }
+
+    li {
+    width                       : 100%;
+    height                      : 100%;
+    position                    : absolute;
+    top                         : 0;
+    left                        : 0;
+    background-size             : cover;
+    background-position         : 50% 50%;
+    background-repeat           : no-repeat;
+    // -webkit-backface-visibility : hidden;
+    // animation                   : imgAnimation 35s linear infinite 0s;
+    background-image : url(../img/photo/2.jpg);
+    // .opacity(0);
+
+        // &:nth-child(1){ background-image : url(../img/photo/1.jpg) }
+
+        // &:nth-child(2){
+        // background-image : url(../img/photo/2.jpg);
+        // animation-delay  : 7s;
+        // }
+
+        // &:nth-child(3){
+        // background-image : url(../img/photo/3.jpg);
+        // animation-delay  : 14s;
+        // }
+
+        // &:nth-child(4){
+        // background-image : url(../img/photo/4.jpg);
+        // animation-delay  : 21s;
+        // }
+
+        // &:nth-child(5){
+        // background-image : url(../img/photo/5.jpg);
+        // animation-delay  : 28s;
+        // }
+
+        // &:nth-child(6){
+        // background-image : url(../img/photo/6.jpg);
+        // animation-delay  : 35s;
+        // }
+    }
+}
+
+
+
+
+/* ========================================================================== */
+/*                               =CONTACT                                     */
+/* ========================================================================== */
+
+.form {
+width : 100%;
+
+    input,
+    textarea {
+    display         : block;
+    width           : 100%;
+    margin-bottom   : 1.5rem;
+    }
+}
+
+
+
+
+/* ========================================================================== */
+/*                               =BON A SAVOIR                                */
+/* ========================================================================== */
+
+// .footer { }
+
+.mod_perf {
+    width   : 100%;
+    padding : 0;
+    margin  : 0 auto;
+    display : block;
+}
+
+.perf {
+float          : left;
+display        : block;
+margin-bottom  : 1rem;
+width          : 100%;
+padding        : 2rem 0;
+font-size      : 3rem;
+font-weight    : 100;
+text-transform : uppercase;
+text-align     : center;
+color          : @bleu;
+box-shadow     : inset 0 0 0 .1rem @gris70;
+
+    ul {
+    font-size  : 2rem;
+    color      : @gris70;
+    padding    : 0;
+
+        li { text-transform : none; }
+    }
+}
+
+
+/* ========================================================================== */
+/*                               =FOOTER                                      */
+/* ========================================================================== */
+
+.main_footer {
+width   : 100%;
+padding : 2rem;
+
+    h6 {
+    margin         : 0;
+    text-shadow : .1rem .1rem .1rem rgba(0, 0, 0, 0.1);
+    text-align     : center;
+    font-weight    : 100;
+    text-transform : uppercase;
+    .font_size(2);
+
+    }
+}
+
+/* ========================================================================== */
+/*                               =OPTIONS                                     */
+/* ========================================================================== */
+
+// Fenetre d'avertissement.
+.alerte {
+position   : fixed;
+bottom     : 0;
+right      : 0;
+left       : 0;
+height     : 3rem;
+margin     : 5rem 0 0 0;
+background : @gris30;
+text-align : center;
+padding    : 0.5rem 0;
+box-shadow : 0 0 .5rem rgba(0, 0, 0, 0.3);
+z-index    : 1000;
+color      : @blanc;
+.font_size(1.3);
+.opacity(.9);
+
+    a {
+    color : @mango;
+
+        &:hover { color : @bleu; }
+    }
+}
+
+
+
+
+/* ========================================================================== */
+/*                               =SLIDESHOW Photo                             */
+/* ========================================================================== */
+
+.photostack {
+background : @gris95;
+position   : relative;
+text-align : center;
+overflow   : hidden;
+
+    // The size of this wrapper can be smaller if the items should not be scattered across the whole container
+    > div {
+    width  : 100%;
+    height : 100vh;
+    margin : 0 auto;
+    }
+
+    figure {
+    width      : 34rem;
+    height     : 38rem;
+    position   : relative;
+    display    : inline-block;
+    background : @blanc;
+    padding    : 4rem;
+    text-align : center;
+    margin     : .5rem;
+
+        /* Overlay on figure */
+        &:after {
+        content    : '';
+        position   : absolute;
+        width      : 100%;
+        height     : 100%;
+        top        : 0;
+        left       : 0;
+        visibility : visible;
+        opacity    : 1;
+        background : rgba(255,255,255, .3);
+        transition : opacity .6s;
+        }
+    }
+
+    /* Navigation dots */
+    nav {
+    position           : absolute;
+    width              : 100%;
+    bottom             : 3rem;
+    z-index            : 90;
+    text-align         : center;
+    left               : 0;
+    transition         : opacity 0.3s;
+
+        span {
+        position      : relative;
+        display       : inline-block;
+        margin        : 0 .5rem;
+        width         : 3rem;
+        height        : 3rem;
+        cursor        : pointer;
+        background    : @gris50;
+        border-radius : 50%;
+        text-align    : center;
+        transition    : transform .6s ease-in-out, background .3s;
+        transform     : scale(.48);
+
+            &:last-child { margin-right: 0; }
+        }
+    }
+}
+
+.photostack-title { margin: 2rem 0 0 0; }
+
+/* Since we don't have back sides for the first photo stack, we don't want the current dot to become too big */
+#photostack .current {
+    background : @mango;
+    transform  : scale(.61);
+}
+
+.photostack-start {
+cursor : pointer;
+
+    nav { opacity: 0; }
+}
+
+/* Overlays */
+
+/* Initial overlay on photostack container */
+.js {
+
+    .photostack {
+    height : 100vh;
+
+        figure {
+        position : absolute;
+        display  : block;
+        margin   : 0;
+        }
+
+        &:before {
+        content    : '';
+        position   : absolute;
+        width      : 100%;
+        height     : 100%;
+        background : rgba(255,255,255,0.8);
+        top        : 0;
+        left       : 0;
+        z-index    : 100;
+        transition : opacity 0.3s, visibility 0s 0.3s;
+        }
+
+        /* Button on photostack container */
+        &:after {
+        content        : '& aussi photographe';
+        position       : absolute;
+        border         : .2rem solid @gris50;
+        text-align     : center;
+        white-space    : nowrap;
+        left           : 50%;
+        top            : 50%;
+        transform      : translateY(-50%) translateX(-50%);
+        padding        : 1.5rem 2rem;
+        color          : @gris24;
+        text-transform : uppercase;
+        cursor         : pointer;
+        z-index        : 101;
+        }
+
+        &:before,
+        &:after {
+        opacity    : 0;
+        visibility : hidden;
+        }
+    }
+
+    .photostack-start:before { transition : opacity 0.3s; }
+
+    .photostack-start:before,
+    .photostack-start:hover:after,
+    .touch .photostack-start:after  {
+    opacity    : 1;
+    visibility : visible;
+    }
+}
+
+/* Hide figure overlay when it becomes current */
+figure.photostack-current:after {
+    transition : opacity .6s, visibility 0s .6s;
+    opacity    : 0;
+    visibility : hidden;
+}
+
+/* Special classes for transitions and perspective */
+.photostack-transition figure { transition : transform .6s ease-in-out; }
+
+.photostack-perspective { perspective : 180rem; }
+
+.photostack-perspective > div,
+.photostack-perspective figure { transform-style : preserve-3d; }
+
+.photostack-perspective figure,
+.photostack-perspective figure div { backface-visibility : hidden; }
+
+.photostack-perspective figure.photostack-flip { transform-origin : 0% 50%; }
+
+.csstransformspreserve3d figure.photostack-flip .photostack-back {
+    transform : rotateY(180deg);
+    display   : block;
+}
+
+.no-csstransformspreserve3d figure.photostack-showback .photostack-back { display : block; }
+
+/* The no-JS fallback look does not need to be boring ;) */
+.no-js .photostack figure {
+box-shadow : -.2rem .2rem 0 rgba(0,0,0,0.05);
+
+    &:after           { display   :  none; }
+    &:nth-child(3n)   { transform : translateX(-10%) rotate(5deg); }
+    &:nth-child(3n-2) { transform : translateY(10%) rotate(-3deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

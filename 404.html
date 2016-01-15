@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">      
+        <title>GuCas - Intégrateur web, web designer et photographe</title>
+        <meta name="description" content="GuCas - Intégrateur web, web designer et photographe situé dans les Yvelines">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/x-mix.css">
+        <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+
+        <!-- Meta Open Graph -->
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:title" content="GuCas - Intégrateur web, web designer et photographe" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.gucas.fr" />
+        <meta property="og:site_name" content="GuCas" />
+        <meta property="og:image" content="A FAIRE" />
+
+        <!-- <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Gloria+Hallelujah"> -->
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+
+    <body class="clearfix" role="main">
+        <!--[if lt IE 7]>
+            <div class="older_browser">Vous utilisez un navigateur web centenaire. Pour le bien de l'humanité &amp; la paix dans le monde, vous devriez le <a href="http://browsehappy.com/" target="_blank">mettre à jour... </a>Merci. :-)</div>
+        <![endif]-->
+        <header class="header" role="banner">
+            <nav class="nav center clearfix" role="navigation">
+
+                <h1 class="logo"><a href="/" title="Logo">gucas</a></h1>
+
+                <ul class="menu">
+                    <li><a href="#services" title="Présentation &amp; Services">Services</a></li>
+                    <li><a href="#portfolio" title="Mon Travail En Image">Portfolio</a></li>
+                    <li><a href="#cv" title="Mes Compétences &amp; CV">Infos</a></li>                    
+                    <li><a href="#photo" title="Je Fais Aussi De La Photo">Photographe</a></li>
+                    <li><a href="#contact" title="Contactez-Moi">&nbsp;+&nbsp;</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="wrapper bg_bleu">
+            <article class="content center">
+
+                <h1 class="title">Oups, Page 404 !</h1>
+
+                <p class="txtcenter"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="260" height="280" viewBox="0 0 260 280"><g></g><path d="M255 150q0 4.062-2.969 7.031t-7.031 2.969h-35q0 26.719-10.469 45.312l32.5 32.656q2.969 3 3 7.031t-2.969 7.031q-2.813 2.969-7.031 2.969t-7.031-2.969l-30.938-30.781q-0.781 0.781-2.344 2.031t-6.563 4.453-10.156 5.703-12.812 4.531-15.156 2.031v-140h-20v140q-7.969 0-15.859-2.109t-13.594-5.156-10.312-6.094-6.797-5.078l-2.344-2.188-28.594 32.344q-3.125 3.281-7.5 3.281-3.75 0-6.719-2.5-2.969-2.813-3.203-6.953t2.422-7.266l31.563-35.469q-9.063-17.813-9.063-42.812h-35q-4.062 0-7.031-2.969t-2.969-7.031 2.969-7.031 7.031-2.969h35v-45.938l-27.031-27.031q-2.969-2.969-2.969-7.031t2.969-7.031 7.031-2.969 7 2.969l27.031 27.031h131.875l27.031-27.031q2.969-2.969 7.031-2.969t7.031 3 3 7.031-2.969 7.031l-27.031 27.031v45.938h35q4.062 0 7 2.969t2.969 7.031zM180 60h-100q0-20.781 14.609-35.391t35.391-14.609 35.4 14.6 14.6 35.391z" fill="#ffffff"/></svg></p>
+            </article>
+        </div>
+
+        <!--  JS pour l'animation du scroll -->
+        <script>
+            $( document ).ready(function() {
+                var $root = $('html, body');
+                $('a').click(function() {
+                    var href = $.attr(this, 'href');
+                    $root.animate({
+                        scrollTop: $(href).offset().top
+                    }, 1000, function () {
+                        window.location.hash = href;
+                    });
+                    return false;
+                });
+            }); 
+        </script>
+        <noscript>Pas cool ! Vous avez désactivé Javascript...</noscript>
+    </body>
+</html>

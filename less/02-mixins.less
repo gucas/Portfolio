@@ -1,0 +1,27 @@
+
+
+
+/* ========================================================================== */
+/*                               =MIXINS                                      */
+/* ========================================================================== */
+
+// OPACITE
+.opacity (@opacity) {
+    opacity     : @opacity;
+    @opacity-ie : (@opacity * 100); // IE8 filter.
+    filter      : ~"alpha(opacity=@{opacity-ie})";
+}
+
+
+// POLICE EN PX & REM
+/* NE PAS OUBLIER D'ATTRIBUER : html { font-size: 62.5%; } */
+.font_size(@sizeValue) {
+  @remValue : @sizeValue;
+  @pxValue  : (@sizeValue * 10);
+  font-size : ~"@{pxValue}px";
+  font-size : ~"@{remValue}rem";
+}
+
+
+// EFFETS & ANIMATIONS
+.transition (@transition : all 0.3s ease-out) { transition : @transition; }
