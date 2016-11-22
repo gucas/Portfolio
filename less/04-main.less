@@ -10,6 +10,7 @@ html {
   -webkit-text-size-adjust : 100%;  // Prevent iOS text size adjust after orientation change, without disabling
   font-size                : 62.5%; // Taille de police de base necessaire pour utiliser l'unité REM, corresponds à 10px.
   line-height              : 1.3;
+  box-sizing : border-box;
 }
 
 // html,
@@ -49,6 +50,12 @@ body {
     -webkit-backface-visibility : hidden; // Corrige un bug pour les animations sous webkit.
     -webkit-tap-highlight-color : @mango;
     .font_size(1.6); // Correction bug pour les polices en REM sous Chrome.
+}
+
+*,
+*:before,
+*:after {
+  box-sizing : inherit;
 }
 
 // Supprime le "text-shadow" lors de séléctions.
